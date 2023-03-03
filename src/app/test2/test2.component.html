@@ -1,38 +1,39 @@
 <div class="row">
     <div class="container col-md-3 col-md-offset-3">
-        <form class="form-control" #form = ngForm>
-                <div class="form-group form">
-                    <input type="checkbox" id="check" (click)="fetchdata()">
-                    <label for="check" class="ml-2">Virtual Program</label>
-                </div>
-                <div class="d-inline-flex justify-content-around">
-                    <div class="dropdown mr-5">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                            (click)="getProgram_list()"> Programs </button>
-                            
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <label class="dropdown-item" *ngFor="let program of program_list">
-                                <input type="checkbox" id={{program.programId}} (change)="checkProgramSelected(program.programId)">{{program.programName}}
-                            </label>
-                        </div>
-                </div>
-            
-                <div class="dropdown ml-5">
-                    <button class="btn btn-secondary dropdown-toggle" (click)="getProgram_list()" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Projects
-                    </button>
+        <form class="form-control" #form=ngForm>
+            <div class="form-group form">
+                <input type="checkbox" id="check" (click)="fetchdata()">
+                <label for="check" class="ml-2">Virtual Program</label>
+            </div>
+            <div class="d-inline-flex justify-content-around">
+                <div class="dropdown mr-5">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="getProgram_list()">
+                        Programs </button>
+
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <div class="formgroup d-inline-flex flex-row justify-content-between">
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <label class="dropdown-item" *ngFor="let p of checkselected">
-                                    <input type="checkbox" > {{p}}
-                                </label>
-                            </div>
-                        </div>
+                        <label class="dropdown-item" *ngFor="let program of program_list">
+                            <input type="checkbox"
+                                (click)="checkProgramSelected(program.programId)">{{program.programName}}
+                        </label>
                     </div>
                 </div>
+
+                <div class="dropdown mr-5">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="getProgram_list()">
+                        Projects </button>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <label class="dropdown-item" *ngFor="let program of resultArray">
+                            <input type="checkbox"
+                                >{{program.projectName}}
+                        </label>
+                    </div>
+                </div>
+
             </div>
-                <div class="mt-2 d-flex ">  <button class="btn btn-primary" type="submit">Submit</button> </div>
-            </form>                  
-    </div>     
+            <div class="mt-2 d-flex "> <button class="btn btn-primary" type="submit">Submit</button> </div>
+        </form>
+    </div>
 </div>
