@@ -11,6 +11,7 @@ import { Projects } from './test2/apiData/projects.model';
 export class ApiserviceService {
 
   programs: Programs[] = [];
+  projects: Projects[] = [];
   constructor(private http: HttpClient) { }
   // programs =[{projectName:string}];
   getProgram() {
