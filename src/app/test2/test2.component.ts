@@ -33,16 +33,18 @@ export class Test2Component {
     console.warn('id ', id);
     console.warn('ara', this.checkselected);
     // console.warn(this.project_list);
-    
-    
-    this.project_list.forEach((data) => {
-      this.checkselected.forEach((res: any) => {
-        if (data.programId == res && this.resultArray
-          .findIndex(ap => ap.projectName == data.projectName) == -1) {
-          this.resultArray.push(data); 
-        }
-      })
-    })
+    for(let i in this.project_list){
+    if(this.checkselected.id === this.project_list[i].programId)
+    this.resultArray.push(this.project_list[i].projectName);
+    }
+    // this.resultArray.forEach((data) => {
+    //   this.checkselected.forEach((res: any) => {
+    //     if (data.programId == res && this.project_list
+    //       .findIndex(ap => ap.projectName == data.projectName) == -1) {
+    //       this.resultArray.push(data); 
+    //     }
+    //   })
+    // })
     console.warn('mit',this.resultArray);
 
     
