@@ -18,7 +18,6 @@ export class Test2Component {
 
   gettingDataFromServerApi() {
     this.api.getProgram().subscribe(gram_res => { console.log(gram_res); this.program_list = gram_res; });
-    this.api.getProjects().subscribe(pro_res => { console.log(pro_res);  this.project_list = pro_res; });
   }
 
   fetchdata() {
